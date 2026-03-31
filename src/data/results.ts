@@ -1,5 +1,4 @@
 export interface ResultInfo {
-  type: string;
   nickname: string;
   description: string;
   avatarStyle: string;
