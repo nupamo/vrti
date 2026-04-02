@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { RotateCcw, Copy, ChevronLeft, User } from 'lucide-react';
+import { RotateCcw, Copy, ChevronLeft, User, Info, X } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { questions } from './data/questions';
 import { results } from './data/results';
@@ -12,6 +12,7 @@ export default function App() {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [resultCode, setResultCode] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const confettiCanvasRef = useRef<HTMLCanvasElement>(null);
   const [confettiInstance, setConfettiInstance] = useState<any>(null);
 
@@ -256,7 +257,15 @@ export default function App() {
                 {/* Right Column: Detailed Analysis and Actions */}
                 <div className="mt-12 md:mt-0 space-y-8 flex flex-col">
                   <div>
-                    <h3 className="text-vrc-neon text-xs font-bold uppercase tracking-wider mb-4">세부 분석</h3>
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-vrc-neon text-xs font-bold uppercase tracking-wider">세부 분석</h3>
+                      <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="text-[10px] text-gray-500 hover:text-vrc-neon flex items-center gap-1 transition-colors uppercase font-bold"
+                      >
+                        <Info size={12} /> 전체 지표 보기
+                      </button>
+                    </div>
                     <div className="grid grid-cols-1 gap-2">
                       {resultCode.split('').map((char, idx) => {
                         const info = indicatorDescriptions[char as Indicator];
@@ -316,6 +325,76 @@ export default function App() {
                 </div>
               </div>
             </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {isModalOpen && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsModalOpen(false)}
+                className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                className="vrc-panel w-full max-w-lg relative z-10 max-h-[80vh] overflow-y-auto"
+              >
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-vrc-neon font-black text-xl tracking-tighter">전체 지표 가이드</h3>
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="p-2 text-gray-500 hover:text-white transition-colors"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
+
+                <div className="space-y-6">
+                  {[
+                    { pair: ['E', 'I'], title: '탐험 vs 안주' },
+                    { pair: ['S', 'C'], title: '자아 vs 페르소나' },
+                    { pair: ['D', 'G'], title: '몰입 vs 관조' },
+                    { pair: ['A', 'U'], title: '적응 vs 개성' }
+                  ].map((group, groupIdx) => (
+                    <div key={groupIdx} className="space-y-2">
+                      <div className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+                        <div className="h-px flex-1 bg-white/5" />
+                        {group.title}
+                        <div className="h-px flex-1 bg-white/5" />
+                      </div>
+                      <div className="grid grid-cols-1 gap-2">
+                        {group.pair.map((char) => {
+                          const info = indicatorDescriptions[char as Indicator];
+                          return (
+                            <div key={char} className="bg-white/5 p-4 rounded-2xl border border-white/5 flex gap-4 items-start">
+                              <div className="w-10 h-10 rounded-xl bg-vrc-neon/10 flex items-center justify-center text-vrc-neon font-mono font-black text-xl shrink-0 border border-vrc-neon/20">
+                                {char}
+                              </div>
+                              <div>
+                                <div className="text-xs font-black text-vrc-neon uppercase tracking-wider mb-1">{info.name}</div>
+                                <div className="text-sm text-gray-300 leading-snug break-keep">{info.description}</div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="vrc-button w-full mt-8"
+                >
+                  닫기
+                </button>
+              </motion.div>
+            </div>
           )}
         </AnimatePresence>
 
