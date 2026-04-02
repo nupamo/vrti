@@ -15,6 +15,7 @@ export default {
         }
       },
       fontFamily: {
+        sans: ['"Noto Sans KR"', 'Inter', 'system-ui', 'sans-serif'],
         cyber: ['Inter', 'system-ui', 'sans-serif'],
       },
     },

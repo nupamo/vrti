@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,5 +31,14 @@ body {
 }
 
 .vrc-panel {
-  @apply bg-[#151C26]/80 backdrop-blur-md rounded-2xl p-8 border border-white/10;
+  @apply bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden;
+}
+
+.break-keep-word {
+  word-break: keep-all; /* 한국어용: 단어 단위 줄바꿈 */
+  overflow-wrap: break-word;
+}
+
+.break-anywhere {
+  word-break: break-all; /* 일본어용: 글자 단위 줄바꿈 */
 }
