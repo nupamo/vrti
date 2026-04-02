@@ -58,9 +58,9 @@ const avatars: Record<string, AvatarInfo> = {
     avatar: 'https://booth.pximg.net/01965a9e-bce5-4027-bc0e-0b8e7df43c6e/i/6538026/182b133f-1c86-4ae8-8536-5e00f63b86cf_base_resized.jpg',
     boothUrl: '6538026'
   },
-  rurune: {
-    avatar: 'https://booth.pximg.net/96d1d589-6879-4d30-8891-a2c6b8d64186/i/5957830/a4e0ae5b-7797-448b-80b1-e852c861e080_base_resized.jpg',
-    boothUrl: '5957830'
+  nemesis: {
+    avatar: 'https://booth.pximg.net/361b24ef-b14b-4330-aa22-2725a5727286/i/5986971/d1261463-3709-4d8e-9ec7-60f09ba9b07b_base_resized.jpg',
+    boothUrl: '5986971'
   },
   mafuyu: {
     avatar: 'https://booth.pximg.net/1ae5d9f5-29a4-4574-ab86-a316c22db92a/i/5007531/dfdc2835-e4db-44f8-85ed-20bf607ad64e_base_resized.jpg',
@@ -239,7 +239,7 @@ export const results: Record<string, ResultInfo> = {
       ja: "小さくて可愛いキャラクターを好みながらも、他人とは違うディテールや一味違う個性を大切にするタイプ。小柄ながらも確かな存在感を示す。"
     },
     avatarStyle: { ko: "특정 컨셉이나 속성이 명확한 화려한 디테일의 스타일.", en: "Flashy detail style with clear specific concepts or attributes.", ja: "特定のコンセプトや属性が明確な、華やかなディテールのスタイル。" },
-    ...avatars.rurune
+    ...avatars.nemesis
   },
   "DEFAULT": {
     nickname: { ko: "미스테리한 여행자", en: "Mysterious Traveler", ja: "ミステリアスな旅人" },

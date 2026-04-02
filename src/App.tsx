@@ -30,7 +30,7 @@ const uiTranslations: Record<Language, Record<string, string>> = {
     pair_2: "자아 vs 페르소나",
     pair_3: "현실 vs 몰입",
     pair_4: "적응 vs 개성",
-    share_text: "[VRCTI 결과]\n유형: {code}\n별명: {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
+    share_text: "[VRCTI 결과]\n결과: {code}, {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
   },
   en: {
     start_description: "What is your virtual world playstyle?",
@@ -54,7 +54,7 @@ const uiTranslations: Record<Language, Record<string, string>> = {
     pair_2: "Self vs Persona",
     pair_3: "Reality vs Immersive",
     pair_4: "Adapt vs Unique",
-    share_text: "[VRCTI Results]\nType: {code}\nNickname: {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
+    share_text: "[VRCTI Results]\nType: {code}, {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
   },
   ja: {
     start_description: "あなたの仮想世界でのプレイスタイルは？",
@@ -78,7 +78,7 @@ const uiTranslations: Record<Language, Record<string, string>> = {
     pair_2: "自分 vs ペルソナ",
     pair_3: "現実 vs 没入",
     pair_4: "適応 vs 個性",
-    share_text: "[VRCTI 結果]\nタイプ: {code}\nニックネーム: {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
+    share_text: "[VRCTI 結果]\nタイプ: {code}、{nickname}型\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
   }
 };
 
@@ -101,6 +101,18 @@ export default function App() {
   }, []);
 
   const t = uiTranslations[lang];
+
+  // 페이지 타이틀 동적 설정
+  useEffect(() => {
+    if (step === 'start') {
+      document.title = 'VRCTI - VRChat Type Indicator';
+    } else if (step === 'test') {
+      document.title = `VRCTI - Q${currentIdx + 1} | VRChat Type Indicator`;
+    } else if (step === 'result' && resultCode) {
+      const nickname = results[resultCode]?.nickname[lang] || '';
+      document.title = `VRCTI [${resultCode}] ${nickname} | VRChat Type Indicator`;
+    }
+  }, [step, currentIdx, resultCode, lang]);
 
   useEffect(() => {
     if (confettiCanvasRef.current && !confettiInstance) {
@@ -347,17 +359,17 @@ export default function App() {
           {isModalOpen && (
             <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsModalOpen(false)} className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9, y: 20 }} 
-                animate={{ opacity: 1, scale: 1, y: 0 }} 
-                exit={{ opacity: 0, scale: 0.9, y: 20 }} 
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
                 className="vrc-panel w-full max-w-lg relative z-10 max-h-[90vh] flex flex-col"
               >
                 <div className="flex justify-between items-center mb-6 shrink-0">
                   <h3 className="text-vrc-neon font-black text-xl tracking-tighter">{t.modal_title}</h3>
                   <button onClick={() => setIsModalOpen(false)} className="p-2 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
                 </div>
-                
+
                 <div className="overflow-y-auto flex-1 pr-2 custom-scrollbar">
                   <div className="space-y-6">
                     {[
@@ -388,7 +400,7 @@ export default function App() {
                     ))}
                   </div>
                 </div>
-                
+
                 <button onClick={() => setIsModalOpen(false)} className="vrc-button w-full mt-8 shrink-0">{t.modal_close}</button>
               </motion.div>
             </div>
