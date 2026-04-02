@@ -184,6 +184,14 @@ export default function App() {
         zIndex: -1
       });
     }
+
+    // Google Analytics 이벤트 전송
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'complete_test', {
+        'result_code': res,
+        'language': navigator.language,
+      });
+    }
   };
 
   const reset = () => {
