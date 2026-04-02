@@ -114,7 +114,7 @@ export const questions: Question[] = [
       en: "If my VR equipment was being repaired, I probably wouldn't log in.",
       ja: "VR機器が修理中であれば、あえてログインはしないと思う。"
     },
-    weights: [{ indicator: 'D', score: 0.9 }, { indicator: 'I', score: 0.301 }]
+    weights: [{ indicator: 'D', score: 1.01 }, { indicator: 'I', score: 0.301 }]
   },
   {
     text: {
@@ -130,7 +130,7 @@ export const questions: Question[] = [
       en: "I prefer exploring worlds over sitting in front of a mirror and chatting.",
       ja: "鏡を見ながらお喋りするより、ワールド探索の方が好きだ。"
     },
-    weights: [{ indicator: 'G', score: 1.301 }, { indicator: 'E', score: 0.5 }]
+    weights: [{ indicator: 'G', score: 1.001 }, { indicator: 'E', score: 0.5 }]
   },
   {
     text: {

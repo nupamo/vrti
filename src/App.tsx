@@ -30,7 +30,7 @@ const uiTranslations: Record<Language, Record<string, string>> = {
     pair_2: "자아 vs 페르소나",
     pair_3: "현실 vs 몰입",
     pair_4: "적응 vs 개성",
-    share_text: "[VRCTI 결과]\n유형: {code}\n별명: {nickname}\n#VRCTI #VRChat"
+    share_text: "[VRCTI 결과]\n유형: {code}\n별명: {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
   },
   en: {
     start_description: "What is your virtual world playstyle?",
@@ -54,7 +54,7 @@ const uiTranslations: Record<Language, Record<string, string>> = {
     pair_2: "Self vs Persona",
     pair_3: "Reality vs Immersive",
     pair_4: "Adapt vs Unique",
-    share_text: "[VRCTI Results]\nType: {code}\nNickname: {nickname}\n#VRCTI #VRChat"
+    share_text: "[VRCTI Results]\nType: {code}\nNickname: {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
   },
   ja: {
     start_description: "あなたの仮想世界でのプレイスタイルは？",
@@ -78,7 +78,7 @@ const uiTranslations: Record<Language, Record<string, string>> = {
     pair_2: "自分 vs ペルソナ",
     pair_3: "現実 vs 没入",
     pair_4: "適応 vs 個性",
-    share_text: "[VRCTI 結果]\nタイプ: {code}\nニックネーム: {nickname}\n#VRCTI #VRChat"
+    share_text: "[VRCTI 結果]\nタイプ: {code}\nニックネーム: {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
   }
 };
 
@@ -244,7 +244,7 @@ export default function App() {
                   <motion.div className="h-full bg-vrc-neon shadow-[0_0_10px_rgba(0,210,255,0.5)]" initial={{ width: 0 }} animate={{ width: `${((currentIdx + 1) / questions.length) * 100}%` }} />
                 </div>
               </div>
-              <h2 className={`text-xl font-bold mb-12 min-h-[7rem] flex items-center justify-center leading-relaxed text-center ${lang === 'ko' ? 'break-keep' : 'break-all'}`}>
+              <h2 className={`text-xl font-bold mb-12 min-h-[7rem] flex items-center justify-center leading-relaxed text-center ${lang === 'ko' ? 'break-keep' : (lang === 'ja' ? 'break-all' : 'break-words')}`}>
                 {questions[currentIdx].text[lang]}
               </h2>
               <div className="flex gap-4">
@@ -268,7 +268,7 @@ export default function App() {
                   <div className="relative mb-6 group">
                     <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="w-56 h-56 mx-auto rounded-3xl overflow-hidden border-2 border-vrc-neon/30 p-1 bg-gradient-to-br from-vrc-neon/10 to-transparent relative">
                       {currentResult.boothUrl ? (
-                        <a href={currentResult.boothUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
+                        <a href={`https://booth.pm/${lang}/items/${currentResult.boothUrl}`} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
                           <img src={currentResult.avatar} alt={currentResult.nickname[lang]} className="w-full h-full object-cover rounded-[1.4rem]" />
                           <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-[1.4rem]">
                             <span className="text-[10px] font-black text-vrc-neon tracking-widest border border-vrc-neon px-2 py-1 rounded-sm bg-black/50">{t.result_booth}</span>
@@ -283,7 +283,7 @@ export default function App() {
                     {currentResult.nickname[lang]}
                   </div>
                   <h2 className="text-6xl font-black mb-8 text-white tracking-[0.25em] font-mono">{resultCode}</h2>
-                  <p className="text-gray-300 leading-relaxed text-left bg-black/30 p-4 rounded-lg border border-white/5 text-sm">
+                  <p className={`text-gray-300 leading-relaxed text-left bg-black/30 p-4 rounded-lg border border-white/5 text-sm ${lang === 'ko' ? 'break-keep' : (lang === 'ja' ? 'break-all' : 'break-words')}`}>
                     {currentResult.description[lang]}
                   </p>
                 </div>
@@ -318,13 +318,13 @@ export default function App() {
                   <div className="mt-auto pt-4 border-t border-white/5">
                     <div className="grid grid-cols-2 gap-3 mb-6">
                       <button onClick={() => {
-                        const shareText = t.share_text.replace('{code}', resultCode).replace('{nickname}', currentResult.nickname[lang]);
+                        const shareText = t.share_text.replaceAll('{code}', resultCode).replace('{nickname}', currentResult.nickname[lang]);
                         copyToClipboard(shareText);
                       }} className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 p-3 rounded-lg text-sm border border-white/10 transition-colors">
                         <Copy size={16} /> {t.result_copy_text}
                       </button>
                       <button onClick={() => {
-                        const shareText = t.share_text.replace('{code}', resultCode).replace('{nickname}', currentResult.nickname[lang]);
+                        const shareText = t.share_text.replaceAll('{code}', resultCode).replace('{nickname}', currentResult.nickname[lang]);
                         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`, '_blank');
                       }} className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 p-3 rounded-lg text-sm border border-white/10 transition-colors">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -347,40 +347,49 @@ export default function App() {
           {isModalOpen && (
             <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsModalOpen(false)} className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
-              <motion.div initial={{ opacity: 0, scale: 0.9, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.9, y: 20 }} className="vrc-panel w-full max-w-lg relative z-10 max-h-[80vh] overflow-y-auto">
-                <div className="flex justify-between items-center mb-6">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9, y: 20 }} 
+                animate={{ opacity: 1, scale: 1, y: 0 }} 
+                exit={{ opacity: 0, scale: 0.9, y: 20 }} 
+                className="vrc-panel w-full max-w-lg relative z-10 max-h-[90vh] flex flex-col"
+              >
+                <div className="flex justify-between items-center mb-6 shrink-0">
                   <h3 className="text-vrc-neon font-black text-xl tracking-tighter">{t.modal_title}</h3>
                   <button onClick={() => setIsModalOpen(false)} className="p-2 text-gray-500 hover:text-white transition-colors"><X size={24} /></button>
                 </div>
-                <div className="space-y-6">
-                  {[
-                    { pair: ['E', 'I'], title: t.pair_1 },
-                    { pair: ['S', 'C'], title: t.pair_2 },
-                    { pair: ['G', 'D'], title: t.pair_3 },
-                    { pair: ['A', 'U'], title: t.pair_4 }
-                  ].map((group, groupIdx) => (
-                    <div key={groupIdx} className="space-y-2">
-                      <div className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
-                        <div className="h-px flex-1 bg-white/5" />{group.title}<div className="h-px flex-1 bg-white/5" />
-                      </div>
-                      <div className="grid grid-cols-1 gap-2">
-                        {group.pair.map((char) => {
-                          const info = indicatorDescriptions[lang][char as Indicator];
-                          return (
-                            <div key={char} className="bg-white/5 p-4 rounded-2xl border border-white/5 flex gap-4 items-start">
-                              <div className="w-10 h-10 rounded-xl bg-vrc-neon/10 flex items-center justify-center text-vrc-neon font-mono font-black text-xl shrink-0 border border-vrc-neon/20">{char}</div>
-                              <div>
-                                <div className="text-xs font-black text-vrc-neon uppercase tracking-wider mb-1">{info.name}</div>
-                                <div className="text-sm text-gray-300 leading-snug break-keep">{info.description}</div>
+                
+                <div className="overflow-y-auto flex-1 pr-2 custom-scrollbar">
+                  <div className="space-y-6">
+                    {[
+                      { pair: ['E', 'I'], title: t.pair_1 },
+                      { pair: ['S', 'C'], title: t.pair_2 },
+                      { pair: ['G', 'D'], title: t.pair_3 },
+                      { pair: ['A', 'U'], title: t.pair_4 }
+                    ].map((group, groupIdx) => (
+                      <div key={groupIdx} className="space-y-2">
+                        <div className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+                          <div className="h-px flex-1 bg-white/5" />{group.title}<div className="h-px flex-1 bg-white/5" />
+                        </div>
+                        <div className="grid grid-cols-1 gap-2">
+                          {group.pair.map((char) => {
+                            const info = indicatorDescriptions[lang][char as Indicator];
+                            return (
+                              <div key={char} className="bg-white/5 p-4 rounded-2xl border border-white/5 flex gap-4 items-start">
+                                <div className="w-10 h-10 rounded-xl bg-vrc-neon/10 flex items-center justify-center text-vrc-neon font-mono font-black text-xl shrink-0 border border-vrc-neon/20">{char}</div>
+                                <div>
+                                  <div className="text-xs font-black text-vrc-neon uppercase tracking-wider mb-1">{info.name}</div>
+                                  <div className={`text-sm text-gray-300 leading-snug ${lang === 'ko' ? 'break-keep' : (lang === 'ja' ? 'break-all' : 'break-words')}`}>{info.description}</div>
+                                </div>
                               </div>
-                            </div>
-                          );
-                        })}
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-                <button onClick={() => setIsModalOpen(false)} className="vrc-button w-full mt-8">{t.modal_close}</button>
+                
+                <button onClick={() => setIsModalOpen(false)} className="vrc-button w-full mt-8 shrink-0">{t.modal_close}</button>
               </motion.div>
             </div>
           )}
