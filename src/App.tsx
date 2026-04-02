@@ -57,26 +57,36 @@ export default function App() {
   };
 
   const calculateResult = (finalAnswers: Record<number, number>) => {
-    const getCode = (pos: string, neg: string, score: number) => {
-      return score >= 3 ? pos : neg;
+    // 모든 지표의 점수를 0으로 초기화
+    const indicatorScores: Record<string, number> = {
+      E: 0, I: 0, S: 0, C: 0, D: 0, G: 0, A: 0, U: 0
     };
 
-    const getIndicatorAvg = (pos: string, neg: string) => {
-      const posQs = questions.filter(q => q.indicator === pos);
-      const negQs = questions.filter(q => q.indicator === neg);
-      if (posQs.length + negQs.length === 0) return 3;
+    // 각 질문에 대해 가중치 계산
+    questions.forEach(q => {
+      const score = finalAnswers[q.id];
+      if (score === 5) { // '그렇다' 선택 시
+        q.weights.forEach(w => {
+          indicatorScores[w.indicator] += w.score;
+        });
+      }
+      // '아니다' 선택 시에는 점수를 주지 않음 (필요 시 로직 확장 가능)
+    });
 
-      const posSum = posQs.reduce((acc, q) => acc + (finalAnswers[q.id] || 3), 0);
-      const negSum = negQs.reduce((acc, q) => acc + (6 - (finalAnswers[q.id] || 3)), 0);
-
-      return (posSum + negSum) / (posQs.length + negQs.length);
+    const getCode = (pos: string, neg: string) => {
+      const posScore = indicatorScores[pos];
+      const negScore = indicatorScores[neg];
+      
+      if (posScore > negScore) return pos;
+      if (negScore > posScore) return neg;
+      return 'x'; // 동점일 경우
     };
 
     const res = [
-      getCode('E', 'I', getIndicatorAvg('E', 'I')),
-      getCode('S', 'C', getIndicatorAvg('S', 'C')),
-      getCode('D', 'G', getIndicatorAvg('D', 'G')),
-      getCode('A', 'U', getIndicatorAvg('A', 'U'))
+      getCode('E', 'I'),
+      getCode('S', 'C'),
+      getCode('D', 'G'),
+      getCode('A', 'U')
     ].join('');
 
     setResultCode(res);
