@@ -29,9 +29,9 @@ export const questions: Question[] = [
   { indicator: 'G', text: "거울을 보며 떠들기보다는 월드 탐방을 더 좋아한다." },
 
   // A (Adapt) vs U (Unique)
-  { indicator: 'U', text: "나는 유니티나 블렌더 작업을 하다가 VRChat 접속을 포기할 때가 있다." },
-  { indicator: 'U', text: "새로운 사람을 만나면 먼저 무슨 아바타나 에셋을 썼는지 궁금하다." },
-  { indicator: 'A', text: "나는 작업할 때 MMD월드에 접속하거나 디스코드 음성방을 둘러본다." },
+  { indicator: 'U', text: "유니티나 사진 보정 작업 등을 하다가 VRChat 접속을 포기할 때가 있다." },
+  { indicator: 'A', text: "아바타는 내 취향보다 남의 눈이 더 중요하다." },
+  { indicator: 'A', text: "새로운 아바타를 만들면 반드시 다른 사람의 의견을 물어본다." },
   { indicator: 'A', text: "새로운 기능을 배우는 것보다, 친구들과 아무 목적 없이 거울 앞에 앉아 떠드는 시간이 더 소중하다." },
   { indicator: 'U', text: "인게임에서 아바타 오류를 발견하면 VR을 쓰고 있어도 유니티를 킨다." }
 ].sort(() => Math.random() - 0.5)
