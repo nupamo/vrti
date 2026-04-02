@@ -22,8 +22,8 @@ export const indicatorDescriptions: Record<Indicator, IndicatorInfo> = {
   'I': { name: 'Inside', description: '지인 위주의 프라이빗한 공간에서 안정적인 유대를 쌓는 것을 선호합니다.' },
   'S': { name: 'Sync', description: '현실의 자아를 아바타에 투영하여 진솔하게 소통합니다.' },
   'C': { name: 'Concept', description: '캐릭터의 설정과 페르소나를 만들어 가상 세계의 삶을 즐깁니다.' },
+  'G': { name: 'Gamer', description: 'VRChat을 가상의 몰입 공간보다는 현실의 연장선이나 하나의 게임 플랫폼으로 인식하고 즐깁니다.' },
   'D': { name: 'Deep', description: '가상 세계의 감각과 감정에 깊게 몰입하며 물리적/정서적 교감을 중시합니다.' },
-  'G': { name: 'Gamer', description: 'VRChat을 하나의 게임이나 발전된 랜덤 채팅으로 인지하고 즐깁니다.' },
   'A': { name: 'Adapt', description: '분위기를 잘 맞추며 내 취향보다는 트렌드에 맞는 아바타를 사용합니다.' },
   'U': { name: 'Unique', description: '나만의 아바타 제작, 사진 촬영 등의 창작 활동에 집중합니다.' },
   'x': { name: 'Neutral', description: '해당 지표에서 중립적인 성향을 보이며 상황에 따라 유연하게 대처합니다.' }

@@ -8,8 +8,8 @@ export default {
     extend: {
       colors: {
         vrc: {
-          blue: '#1E90FF',
-          neon: '#00FFFF',
+          blue: '#1144DD',
+          neon: '#00D2FF',
           dark: '#0A0E14',
           panel: '#151C26',
         }

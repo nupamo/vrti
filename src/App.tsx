@@ -73,20 +73,11 @@ export default function App() {
       // '아니다' 선택 시에는 점수를 주지 않음 (필요 시 로직 확장 가능)
     });
 
-    const getCode = (pos: string, neg: string) => {
-      const posScore = indicatorScores[pos];
-      const negScore = indicatorScores[neg];
-      
-      if (posScore > negScore) return pos;
-      if (negScore > posScore) return neg;
-      return 'x'; // 동점일 경우
-    };
-
     const res = [
-      getCode('E', 'I'),
-      getCode('S', 'C'),
-      getCode('D', 'G'),
-      getCode('A', 'U')
+      (indicatorScores['E'] > indicatorScores['I']) ? 'E' : 'I',   // I 우세 (후반 지표)
+      (indicatorScores['S'] > indicatorScores['C']) ? 'S' : 'C',   // C 우세 (후반 지표)
+      (indicatorScores['G'] > indicatorScores['D']) ? 'G' : 'D',   // D 우세 (D가 후반 지표 + D가 Tie-breaker)
+      (indicatorScores['A'] > indicatorScores['U']) ? 'A' : 'U'    // U 우세 (후반 지표)
     ].join('');
 
     setResultCode(res);
@@ -102,7 +93,7 @@ export default function App() {
         particleCount: 150,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#00FFFF', '#1E90FF', '#ffffff'],
+        colors: ['#00D2FF', '#1144DD', '#ffffff'],
         zIndex: -1 // 캔버스 내부 z-index (보통 캔버스 자체가 낮으면 필요 없음)
       });
     }
@@ -183,7 +174,7 @@ export default function App() {
               <div className="mb-8">
                 <div className="h-1 bg-white/5 rounded-full overflow-hidden">
                   <motion.div
-                    className="h-full bg-vrc-neon shadow-[0_0_10px_rgba(0,255,255,0.5)]"
+                    className="h-full bg-vrc-neon shadow-[0_0_10px_rgba(0,210,255,0.5)]"
                     initial={{ width: 0 }}
                     animate={{ width: `${((currentIdx + 1) / questions.length) * 100}%` }}
                   />
@@ -198,11 +189,11 @@ export default function App() {
                 <button
                   onClick={() => handleAnswer(5)}
                   className={`flex-1 p-8 rounded-3xl border-2 transition-all group flex flex-col items-center justify-center gap-2 ${selectedValue === 5
-                    ? 'border-vrc-neon bg-vrc-neon/20 shadow-[0_0_20px_rgba(0,255,255,0.2)]'
-                    : 'border-white/10 bg-white/5 hover:border-vrc-neon hover:bg-vrc-neon/20 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)]'
+                    ? 'border-vrc-neon bg-vrc-neon/20 shadow-[0_0_20px_rgba(0,210,255,0.2)]'
+                    : 'border-white/10 bg-white/5 hover:border-vrc-neon hover:bg-vrc-neon/20 hover:shadow-[0_0_20px_rgba(0,210,255,0.2)]'
                     }`}
                 >
-                  <div className={`text-6xl font-black transition-all group-hover:scale-110 group-hover:text-vrc-neon group-hover:drop-shadow-[0_0_15px_rgba(0,255,255,0.5)] ${selectedValue === 5 ? 'text-vrc-neon drop-shadow-[0_0_15px_rgba(0,255,255,0.5)]' : 'text-gray-700'
+                  <div className={`text-6xl font-black transition-all group-hover:scale-110 group-hover:text-vrc-neon group-hover:drop-shadow-[0_0_15px_rgba(0,210,255,0.5)] ${selectedValue === 5 ? 'text-vrc-neon drop-shadow-[0_0_15px_rgba(0,210,255,0.5)]' : 'text-gray-700'
                     }`}>O</div>
                   <div className={`text-xs font-bold transition-colors group-hover:text-vrc-neon ${selectedValue === 5 ? 'text-vrc-neon' : 'text-gray-600'
                     }`}>그렇다</div>
@@ -240,18 +231,36 @@ export default function App() {
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-                      className="w-56 h-56 mx-auto rounded-3xl overflow-hidden border-2 border-vrc-neon/30 p-1 bg-gradient-to-br from-vrc-neon/10 to-transparent relative shadow-[0_0_30px_rgba(0,255,255,0.15)]"
+                      className="w-56 h-56 mx-auto rounded-3xl overflow-hidden border-2 border-vrc-neon/30 p-1 bg-gradient-to-br from-vrc-neon/10 to-transparent relative shadow-[0_0_30px_rgba(0,210,255,0.15)]"
                     >
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,255,0.15)_0%,transparent_70%)] group-hover:opacity-100 opacity-50 transition-opacity" />
-                      <img
-                        src={currentResult.avatar}
-                        alt={currentResult.nickname}
-                        className="w-full h-full object-cover rounded-[1.4rem] grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500"
-                      />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,210,255,0.15)_0%,transparent_70%)] group-hover:opacity-100 opacity-50 transition-opacity" />
+                      {currentResult.boothUrl ? (
+                        <a
+                          href={currentResult.boothUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block w-full h-full relative"
+                        >
+                          <img
+                            src={currentResult.avatar}
+                            alt={currentResult.nickname}
+                            className="w-full h-full object-cover rounded-[1.4rem] grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500"
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-[1.4rem]">
+                            <span className="text-[10px] font-black text-vrc-neon tracking-widest border border-vrc-neon px-2 py-1 rounded-sm bg-black/50">GO TO BOOTH</span>
+                          </div>
+                        </a>
+                      ) : (
+                        <img
+                          src={currentResult.avatar}
+                          alt={currentResult.nickname}
+                          className="w-full h-full object-cover rounded-[1.4rem] grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500"
+                        />
+                      )}
                     </motion.div>
                   </div>
 
-                  <div className="inline-block px-4 py-1.5 rounded-full bg-vrc-neon/10 text-vrc-neon text-sm font-bold mb-4 border border-vrc-neon/20 shadow-[0_0_20px_rgba(0,255,255,0.1)]">
+                  <div className="inline-block px-4 py-1.5 rounded-full bg-vrc-neon/10 text-vrc-neon text-sm font-bold mb-4 border border-vrc-neon/20 shadow-[0_0_20px_rgba(0,210,255,0.1)]">
                     {currentResult.nickname}
                   </div>
 
@@ -368,7 +377,7 @@ export default function App() {
                   {[
                     { pair: ['E', 'I'], title: '탐험 vs 안주' },
                     { pair: ['S', 'C'], title: '자아 vs 페르소나' },
-                    { pair: ['D', 'G'], title: '몰입 vs 관조' },
+                    { pair: ['G', 'D'], title: '현실 vs 몰입' },
                     { pair: ['A', 'U'], title: '적응 vs 개성' }
                   ].map((group, groupIdx) => (
                     <div key={groupIdx} className="space-y-2">

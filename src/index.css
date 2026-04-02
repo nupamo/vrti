@@ -8,24 +8,24 @@
 
 body {
   @apply bg-[#0A0E14] text-white font-sans;
-  background: radial-gradient(circle at 50% -20%, #1a2a44 0%, #0A0E14 70%);
+  background: radial-gradient(circle at 50% -20%, #102A5A 0%, #0A0E14 70%);
   min-height: 100vh;
 }
 
 .neon-border {
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3), inset 0 0 5px rgba(0, 255, 255, 0.2);
-  border: 1px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.3), inset 0 0 5px rgba(0, 210, 255, 0.2);
+  border: 1px solid rgba(0, 210, 255, 0.4);
 }
 
 .vrc-button {
   @apply px-6 py-3 rounded-lg font-bold transition-all duration-200 active:scale-95;
-  background: linear-gradient(135deg, #1E90FF 0%, #00FFFF 100%);
-  color: black;
+  background: linear-gradient(135deg, #1144DD 0%, #00D2FF 100%);
+  color: white;
 }
 
 .vrc-button:hover {
   @apply brightness-110;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
 }
 
 .vrc-panel {
