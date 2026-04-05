@@ -79,6 +79,30 @@ const uiTranslations: Record<Language, Record<string, string>> = {
     pair_3: "現実 vs 没入",
     pair_4: "適応 vs 個性",
     share_text: "[VRCTI 結果]\nタイプ: {code}、{nickname}型\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
+  },
+  zh: {
+    start_description: "你的虚拟世界玩乐倾向是？",
+    start_button: "开始测试",
+    test_back: "返回",
+    test_question: "问题",
+    test_yes: "是",
+    test_no: "否",
+    result_title: "你的虚拟世界玩乐倾向",
+    result_booth: "前往 BOOTH",
+    result_analysis: "详细分析",
+    result_all_indicators: "查看全部指标",
+    result_avatar_style: "推荐虚拟形象风格",
+    result_copy_text: "复制文本",
+    result_share_twitter: "在 X 上分享",
+    result_restart: "重新测试",
+    result_copied: "已复制到剪贴板！✨",
+    modal_title: "指标指南",
+    modal_close: "关闭",
+    pair_1: "探索 vs 安逸",
+    pair_2: "本我 vs 人格",
+    pair_3: "现实 vs 沉浸",
+    pair_4: "适应 vs 个性",
+    share_text: "[VRCTI 测试结果]\n类型: {code}, {nickname}\nhttps://vrc.nupa.moe/vrcti?result={code}\n#VRCTI #VRChat"
   }
 };
 
@@ -97,13 +121,15 @@ export default function App() {
     const browserLang = navigator.language.split('-')[0];
     if (browserLang === 'ja') setLang('ja');
     else if (browserLang === 'en') setLang('en');
+    else if (browserLang === 'zh') setLang('zh');
     else setLang('ko');
   }, []);
 
   const t = uiTranslations[lang];
 
-  // 페이지 타이틀 동적 설정
+  // 페이지 타이틀 및 HTML lang 속성 동적 설정
   useEffect(() => {
+    document.documentElement.lang = lang;
     if (step === 'start') {
       document.title = 'VRCTI - VRChat Type Indicator';
     } else if (step === 'test') {
@@ -221,6 +247,7 @@ export default function App() {
             { id: 'ko', label: '한국어' },
             { id: 'en', label: 'English' },
             { id: 'ja', label: '日本語' },
+            { id: 'zh', label: '中文' },
           ].map((l) => (
             <button
               key={l.id}
@@ -416,7 +443,7 @@ export default function App() {
         </AnimatePresence>
 
         <footer className="mt-8 text-[10px] text-gray-600 font-mono flex items-center gap-4">
-          <span className="flex items-center gap-1"><User size={10} /> VRCTI v1.0.0</span>
+          <span className="flex items-center gap-1"><User size={10} /> VRCTI v1.0.2</span>
           <a href="https://x.com/nupamo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-vrc-neon transition-colors">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />

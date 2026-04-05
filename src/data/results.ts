@@ -82,173 +82,190 @@ const avatars: Record<string, AvatarInfo> = {
 
 export const results: Record<string, ResultInfo> = {
   "ESDA": {
-    nickname: { ko: "VRChat의 표준", en: "VRChat Standard", ja: "VRChatの標準" },
+    nickname: { ko: "VRChat의 표준", en: "VRChat Standard", ja: "VRChatの標準", zh: "VRChat 标准型" },
     description: {
       ko: "VRChat의 정석 같은 스타일입니다. 유행을 따르면서도 퍼블릭 월드에서 매너 있게 행동하며, 타인과 깊고 진솔한 관계를 맺는 것을 즐기는 타입입니다.",
       en: "The textbook VRChat style. Follows trends, remains polite in public worlds, and enjoys building deep, sincere relationships.",
-      ja: "VRChatの王道スタイル。流行を追いながらも、パブリックでのマナーが良く、他者と深く誠実な関係を築くことを好むタイプ。"
+      ja: "VRChatの王道スタイル。流行を追いながらも、パブリックでのマナーが良く、他者と深く誠実な関係を築くことを好むタイプ。",
+      zh: "标准的 VRChat 风格。紧跟流行趋势，在公共世界表现得体，喜欢与他人建立深厚且真诚的关系。"
     },
-    avatarStyle: { ko: "모두에게 사랑받는 트렌디하고 세련된 캐주얼 스타일.", en: "Trendy and sophisticated casual style loved by everyone.", ja: "誰からも愛されるトレンド感のある洗練されたカジュアルスタイル。" },
+    avatarStyle: { ko: "모두에게 사랑받는 트렌디하고 세련된 캐주얼 스타일.", en: "Trendy and sophisticated casual style loved by everyone.", ja: "誰からも愛されるトレンド感のある洗練されたカジュアルスタイル。", zh: "深受大众喜爱的流行、时尚且休闲的风格。" },
     ...avatars.manuka
   },
   "ESDU": {
-    nickname: { ko: "서브컬처/패션파", en: "Subculture / Fashionista", ja: "サブカル/ファッション派" },
+    nickname: { ko: "서브컬처/패션파", en: "Subculture / Fashionista", ja: "サブカル/ファッション派", zh: "亚文化/时尚派" },
     description: {
       ko: "남들과는 다른 개성과 자신만의 스타일을 중시하는 타입입니다. 공용 월드에서도 독보적인 분위기를 풍기며, 서브컬처적인 감성을 아바타에 잘 녹여냅니다.",
       en: "Values unique personality and personal style. Stands out even in public worlds, reflecting subculture vibes in their avatar.",
-      ja: "他人とは違う個性と独自のスタイルを重視するタイプ。パブリックワールドでも独特な雰囲気を漂わせ、サブカル的な感性をアバターにうまく落とし込む。"
+      ja: "他人とは違う個性と独自のスタイルを重視するタイプ。パブリックワールドでも独特な雰囲気を漂わせ、サブカル的な感性をアバターにうまく落とし込む。",
+      zh: "注重与众不同的个性和个人风格。即使在公共世界也散发着独特的氛围，能将亚文化感性完美融合在虚拟形象中。"
     },
-    avatarStyle: { ko: "자유분방하고 스타일리시한 서브컬처 패션 스타일.", en: "Free-spirited and stylish subculture fashion style.", ja: "自由奔放でスタイリッシュなサブカルファッションスタイル。" },
+    avatarStyle: { ko: "자유분방하고 스타일리시한 서브컬처 패션 스타일.", en: "Free-spirited and stylish subculture fashion style.", ja: "自由奔放でスタイリッシュなサブカルファッションスタイル。", zh: "自由奔放且时尚的亚文化时尚风格。" },
     ...avatars.sio
   },
   "ESGA": {
-    nickname: { ko: "이벤트 헌터", en: "Event Hunter", ja: "イベントハンター" },
+    nickname: { ko: "이벤트 헌터", en: "Event Hunter", ja: "イベントハンター", zh: "活动猎人" },
     description: {
       ko: "새로운 월드 탐방이나 기업 이벤트, 커뮤니티 행사에 빠짐없이 나타나는 트렌디한 게이머입니다. 최신 소식에 밝고 활동적인 사교가 스타일입니다.",
       en: "A trendy gamer who never misses new worlds, corporate events, or community gatherings. A socially active person always up-to-date with news.",
-      ja: "新しいワールド探索や企業イベント、コミュニティ活動に欠かさず現れるトレンドに敏感なゲーマー。最新情報に詳しく、活動的なソーシャライザー。"
+      ja: "新しいワールド探索や企業イベント、コミュニティ活動に欠かさず現れるトレンドに敏感なゲーマー。最新情報に詳しく、活動的なソーシャライザー。",
+      zh: "从不缺席新世界探索、企业活动或社区活动的时髦玩家。消息灵通且非常活跃的社交达人。"
     },
-    avatarStyle: { ko: "깔끔하고 세련된 데일리 룩이나 포멀한 제복 스타일.", en: "Clean and sophisticated daily look or formal uniform style.", ja: "清潔感のある洗練されたデイリールックやフォーマルな制服スタイル。" },
+    avatarStyle: { ko: "깔끔하고 세련된 데일리 룩이나 포멀한 제복 스타일.", en: "Clean and sophisticated daily look or formal uniform style.", ja: "清潔感のある洗練されたデイリールックやフォーマルな制服スタイル。", zh: "干净且考究的日常装扮或正式的制服风格。" },
     ...avatars.shinano
   },
   "ESGU": {
-    nickname: { ko: "스트리머/크리에이터 성향", en: "Streamer / Creator Type", ja: "配信者/クリエイター気質" },
+    nickname: { ko: "스트리머/크리에이터 성향", en: "Streamer / Creator Type", ja: "配信者/クリエイター気質", zh: "主播/创作者倾向" },
     description: {
       ko: "밝고 활기찬 개성을 뽐내며 게임적인 재미를 주변에 전파하는 타입입니다. 자신만의 창의적인 활동을 통해 사람들에게 즐거움을 주는 것을 선호합니다.",
       en: "Radiates bright and energetic personality, spreading game-like fun to those around them. Prefers making others happy through creative work.",
-      ja: "明るく活発な個性を放ち、ゲーム的な楽しさを周囲に広めるタイプ。自分自身のクリエイティブな活動を通じて、他人に喜びを与えることを好む。"
+      ja: "明るく活発な個性を放ち、ゲーム的な楽しさを周囲に広めるタイプ。自分自身のクリエイティブな活動を通じて、他人に喜びを与えることを好む。",
+      zh: "以开朗活泼的个性展现风采，向身边的人传播游戏乐趣。喜欢通过自己的创意活动带给他人快乐。"
     },
-    avatarStyle: { ko: "에너지 넘치고 활발한 분위기의 섹시한 스타일.", en: "Energetic, active, and sexy vibe style.", ja: "エネルギッシュで活発な雰囲気のセクシーなスタイル。" },
+    avatarStyle: { ko: "에너지 넘치고 활발한 분위기의 섹시한 스타일.", en: "Energetic, active, and sexy vibe style.", ja: "エネルギッシュで活発な雰囲気のセクシーなスタイル。", zh: "充满活力且氛围活跃的性感风格。" },
     ...avatars.airi
   },
   "ECDA": {
-    nickname: { ko: "카와이 무브의 정석", en: "Textbook Kawaii-move", ja: "カワイイムーブの正石" },
+    nickname: { ko: "카와이 무브의 정석", en: "Textbook Kawaii-move", ja: "カワイイムーブの正石", zh: "可爱动作的标准" },
     description: {
       ko: "귀여운 캐릭터성과 정서적인 교감을 동시에 추구하는 대중적인 스타일입니다. 상대방과의 친밀한 소통을 중요시하며 조화로운 분위기를 만듭니다.",
       en: "A popular style seeking both cute character appeal and emotional bonding. Values intimate communication and creates a harmonious atmosphere.",
-      ja: "可愛いキャラクター性と情緒的な交流を同時に追求する人気スタイル。相手との親密なコミュニケーションを重視し、調和のとれた雰囲気を作る。"
+      ja: "可愛いキャラクター性と情緒的な交流を同時に追求する人気スタイル。相手との親密なコミュニケーションを重視し、調和のとれた雰囲気を作る。",
+      zh: "兼顾可爱角色属性和情感交流的大众风格。重视与对方的亲密沟通，营造和谐的氛围。"
     },
-    avatarStyle: { ko: "부드럽고 포근한 느낌의 정석적인 카와이 스타일.", en: "Soft and cozy classic kawaii style.", ja: "柔らかく包み込むような定番のカワイイスタイル。" },
+    avatarStyle: { ko: "부드럽고 포근한 느낌의 정석적인 카와이 스타일.", en: "Soft and cozy classic kawaii style.", ja: "柔らかく包み込むような定番のカワイイスタイル。", zh: "柔和温暖的标准可爱风格。" },
     ...avatars.chiffon
   },
   "ECDU": {
-    nickname: { ko: "판타지 과몰입", en: "Fantasy Immersion", ja: "ファンタジー過没入" },
+    nickname: { ko: "판타지 과몰입", en: "Fantasy Immersion", ja: "ファンタジー過没入", zh: "奇幻过分投入" },
     description: {
       ko: "자신만의 독특한 세계관과 확실한 캐릭터 설정을 가진 몰입형 유저입니다. 평범함을 거부하고 가상 세계 속 페르소나에 깊게 동화되는 것을 즐깁니다.",
       en: "Focused on an immersive world and clear character setting. Rejects the ordinary and enjoys deeply identifying with their virtual persona.",
-      ja: "独自のファンタジーな世界観と確固たるキャラクター設定を持つ没入型ユーザー。凡庸さを拒み、仮想世界でのペルソナに深く同化することを楽しむ。"
+      ja: "独自のファンタジーな世界観と確固たるキャラクター設定を持つ没入型ユーザー。凡庸さを拒み、仮想世界でのペルソナに深く同化することを楽しむ。",
+      zh: "拥有独特世界观和明确角色设定的投入型用户。拒绝平庸，享受深度同化虚拟世界人格的过程。"
     },
-    avatarStyle: { ko: "신비롭고 우아한 분위기의 판타지 또는 고딕 스타일.", en: "Mysterious and elegant fantasy or gothic style.", ja: "神秘的でエレガントな雰囲気のファンタジー、またはゴシックスタイル。" },
+    avatarStyle: { ko: "신비롭고 우아한 분위기의 판타지 또는 고딕 스타일.", en: "Mysterious and elegant fantasy or gothic style.", ja: "神秘的でエレガントな雰囲気のファンタジー、またはゴシックスタイル。", zh: "神秘且优雅的奇幻或哥特风格。" },
     ...avatars.milltina
   },
   "ECGA": {
-    nickname: { ko: "라이트 유저", en: "Light User", ja: "ライトユーザー" },
+    nickname: { ko: "라이트 유저", en: "Light User", ja: "ライトユーザー", zh: "轻度用户" },
     description: {
       ko: "복잡한 인간관계나 깊은 몰입보다는 캐릭터로서 가볍게 놀고 즐기는 것을 선호합니다. 부담 없는 소통과 월드 투어를 통해 힐링하는 타입입니다.",
       en: "Prefers playing lightly as a character rather than complex relationships or deep immersion. Heals through casual interaction and world tours.",
-      ja: "複雑な人間関係や深い没入よりは、公式的なキャラクターとして軽く遊ぶことを好む。負担のない交流やワールド巡りを通じて癒しを求めるタイプ。"
+      ja: "複雑な人間関係や深い没入よりは、公式的なキャラクターとして軽く遊ぶことを好む。負担のない交流やワールド巡りを通じて癒しを求めるタイプ。",
+      zh: "比起复杂的人际关系或深度投入，更喜欢作为角色轻松游玩。通过轻松的交流和世界巡游来获得治愈。"
     },
-    avatarStyle: { ko: "친근하고 편안한 느낌의 데일리 캐주얼 스타일.", en: "Friendly and comfortable daily casual style.", ja: "親しみやすくリラックスしたデイリーカジュアルスタイル。" },
+    avatarStyle: { ko: "친근하고 편안한 느낌의 데일리 캐주얼 스타일.", en: "Friendly and comfortable daily casual style.", ja: "親しみやすくリラックスしたデイリーカジュアルスタイル。", zh: "亲切且舒适的日常休闲风格。" },
     ...avatars.lime
   },
   "ECGU": {
-    nickname: { ko: "아방가르드", en: "Avant-garde", ja: "アヴァンギャルド" },
+    nickname: { ko: "아방가르드", en: "Avant-garde", ja: "アヴァンギャルド", zh: "前卫派" },
     description: {
       ko: "남들이 잘 사용하지 않는 독특한 캐릭터나 아이템으로 자신만의 창작 세계를 표현합니다. 예술적이고 개성 넘치는 외형을 통해 존재감을 드러냅니다.",
       en: "Expresses their creative world using unique characters or items others rarely use. Stands out through artistic and personality-rich looks.",
-      ja: "他人が使わないような独特なキャラクターやアイテムで、自分自身の創作世界を表現する。芸術的で個性が際立つ外見を通じて存在感を示す。"
+      ja: "他人が使わないような独特なキャラクターやアイテムで、自分自身の創作世界を表現する。芸術的で個性が際立つ外見を通じて存在感を示す。",
+      zh: "通过他人很少使用的独特角色或道具来表达自己的创作世界。通过充满艺术感和个性的外型展示存在感。"
     },
-    avatarStyle: { ko: "개성 넘치는 실루엣이나 예술적인 감각의 독특한 스타일.", en: "Unique silhouettes or artistically sensed distinctive style.", ja: "個性的なシルエットや芸術的なセンスが光る独特なスタイル。" },
+    avatarStyle: { ko: "개성 넘치는 실루엣이나 예술적인 감각의 독특한 스타일.", en: "Unique silhouettes or artistically sensed distinctive style.", ja: "個性的なシルエットや芸術的なセンスが光る独特なスタイル。", zh: "充满个性的轮廓或艺术感独特的风格。" },
     ...avatars.lumina
   },
   "ISDA": {
-    nickname: { ko: "클래식 은둔자", en: "Classic Hermit", ja: "クラシック隠遁者" },
+    nickname: { ko: "클래식 은둔자", en: "Classic Hermit", ja: "クラシック隠遁者", zh: "经典隐遁者" },
     description: {
       ko: "초기부터 활동해온 숙련자로, 좁고 깊은 인간관계를 선호합니다. 오랜 시간 쌓아온 신뢰를 바탕으로 지인들과 조용히 시간을 보내는 것을 즐깁니다.",
       en: "An experienced user from the early days, preferring narrow and deep relationships. Enjoys quiet time with friends based on long-term trust.",
-      ja: "初期から活動している熟練ユーザーで、狭く深い人間関係を好む。長年築いてきた信頼に基づき、知人と静かに過ごすことを楽しむ。"
+      ja: "初期から活動している熟練ユーザーで、狭く深い人間関係を好む。長年築いてきた信頼に基づき、知人と静かに過ごすことを楽しむ。",
+      zh: "从初期就开始活动的熟练用户，偏好窄而深的人际关系。在长期积累的信任基础上，享受与熟人静静度过的时光。"
     },
-    avatarStyle: { ko: "오랫동안 사랑받아온 클래식하고 단정한 스타일.", en: "Long-loved classic and neat style.", ja: "長く愛されてきた、クラシックで清楚なスタイル。" },
+    avatarStyle: { ko: "오랫동안 사랑받아온 클래식하고 단정한 스타일.", en: "Long-loved classic and neat style.", ja: "長く愛されてきた、クラシックで清楚なスタイル。", zh: "经久不衰的经典且端庄的风格。" },
     ...avatars.karin
   },
   "ISDU": {
-    nickname: { ko: "수면VR/심연파", en: "Sleep VR / Abyss Walker", ja: "睡眠VR/深淵派" },
+    nickname: { ko: "수면VR/심연파", en: "Sleep VR / Abyss Walker", ja: "睡眠VR/深淵派", zh: "睡眠 VR / 深渊派" },
     description: {
       ko: "조용히 지인 곁을 지키며 정서적으로 완전히 동화되는 것을 즐기는 타입입니다. 함께 있는 것만으로도 안정감을 느끼는 심연의 낭만가 스타일입니다.",
       en: "Enjoys quiet presence with friends and total emotional synchronization. A romantic explorer of the 'Abyss' who feels peace just being together.",
-      ja: "静かに知人の傍に寄り添い、情緒的に完全に同化することを楽しむタイプ。一緒にいるだけで安心感を得る、深淵のロマンチスト。"
+      ja: "静かに知人の傍に寄り添い、情緒的に完全に同化することを楽しむタイプ。一緒にいるだけで安心感を得る、深淵のロマンチスト。",
+      zh: "喜欢静静守在熟人身边，享受情感上的完全同化。只需呆在一起就能感到安稳的深渊浪漫主义者。"
     },
-    avatarStyle: { ko: "차분하고 몽환적인 분위기의 다크톤 또는 수면용 스타일.", en: "Calm and dreamy dark-tone or sleep-optimized style.", ja: "落ち着いた幻想的な雰囲気のダークトーン、または睡眠用スタイル。" },
+    avatarStyle: { ko: "차분하고 몽환적인 분위기의 다크톤 또는 수면용 스타일.", en: "Calm and dreamy dark-tone or sleep-optimized style.", ja: "落ち着いた幻想的な雰囲気のダークトーン、または睡眠用スタイル。", zh: "沉稳且梦幻氛围的暗色调或睡眠专用风格。" },
     ...avatars.mafuyu
   },
   "ISGA": {
-    nickname: { ko: "고인물", en: "Veteran / Expert", ja: "古参（ゴーレム）" },
+    nickname: { ko: "고인물", en: "Veteran / Expert", ja: "古参（ゴーレム）", zh: "资深老玩家" },
     description: {
       ko: "지인들과 조용히 기술적인 대화를 나누거나 월드 제작, 아바타 기믹 구현에 몰입하는 타입입니다.",
       en: "Focuses on technical discussions with close friends or immersing in world-building and avatar gimmick implementation.",
-      ja: "知人と静かに技術的な会話を交わしたり、ワールド制作やアバターギミックの実装に没頭したりするタイプ。"
+      ja: "知人と静かに技術的な会話を交わしたり、ワールド制作やアバターギミックの実装に没頭したりするタイプ。",
+      zh: "喜欢与熟人静静地进行技术交流，或者沉浸在世界制作、虚拟形象装置实现中。"
     },
-    avatarStyle: { ko: "절제된 디자인에 정교한 개조 기믹이 숨겨진 세련된 스타일.", en: "Sophisticated style with discrete design and intricate modification gimmicks.", ja: "控えめなデザインの中に精巧な改造ギ믹が隠された洗練されたスタイル。" },
+    avatarStyle: { ko: "절제된 디자인에 정교한 개조 기믹이 숨겨진 세련된 스타일.", en: "Sophisticated style with discrete design and intricate modification gimmicks.", ja: "控えめなデザインの中に精巧な改造ギミックが隠された洗練されたスタイル。", zh: "在克制的设计中隐藏着精巧改造装置的干练风格。" },
     ...avatars.maya
   },
   "ISGU": {
-    nickname: { ko: "프라이빗 장인", en: "Private Artisan", ja: "プライベート職人" },
+    nickname: { ko: "프라이빗 장인", en: "Private Artisan", ja: "プライベート職人", zh: "私密空间匠人" },
     description: {
       ko: "타인의 시선보다는 본인이 가장 만족하는 성숙하고 세밀한 커스터마이징을 즐기는 타입입니다. 프라이빗 공간에서 자신만의 세계를 완성해 나갑니다.",
       en: "Enjoys mature and detailed customization for personal satisfaction rather than others' gaze. Completes their own world in private spaces.",
-      ja: "他人の目よりは、自分自身が最も満足する成熟した繊細なカスタマイズを楽しむタイプ。プライベート空間で自分だけの世界を完成させる。"
+      ja: "他人の目よりは、自分自身が最も満足する成熟した繊細なカスタマイズを楽しむタイプ。プライベート空間で自分だけの世界を完成させる。",
+      zh: "比起他人的目光，更享受令自己最满意的成熟且细腻的定制。在私密空间中完善属于自己的世界。"
     },
-    avatarStyle: { ko: "디테일이 살아있는 고도로 개조된 커스텀 스타일.", en: "Highly modified custom style with vivid details.", ja: "ディテールにこだわった、高度に改造されたカスタムスタイル。" },
+    avatarStyle: { ko: "디테일이 살아있는 고도로 개조된 커스텀 스타일.", en: "Highly modified custom style with vivid details.", ja: "ディテールにこだわった、高度に改造されたカスタムスタイル。", zh: "充满细节且高度改造的定制风格。" },
     ...avatars.milfy
   },
   "ICDA": {
-    nickname: { ko: "나데나데(쓰담쓰담) 중독", en: "Petting Addict", ja: "ナデナデ中毒" },
+    nickname: { ko: "나데나데(쓰담쓰담) 중독", en: "Petting Addict", ja: "ナデナデ中毒", zh: "摸头杀成瘾" },
     description: {
       ko: "좁은 관계 안에서 귀여움을 주고받으며 정서적 충족감을 얻는 타입입니다. 지인들 사이의 애정 섞인 소통에서 큰 에너지를 얻습니다.",
       en: "Gains emotional fulfillment by sharing cuteness within narrow relationships. Derives great energy from affectionate interactions with close friends.",
-      ja: "狭い関係性の中で可愛さをやり取りし、情緒的な満足感を得るタイプ。親しい間柄での愛情深いコミュニケーションから大きな力を得る。"
+      ja: "狭い関係性の中で可愛さをやり取りし、情緒的な満足感を得るタイプ。親しい間柄での愛情深いコミュニケーションから大きな力を得る。",
+      zh: "在亲密的关系中通过互表可爱来获得情感满足。从熟人之间充满爱意的沟通中汲取巨大的能量。"
     },
-    avatarStyle: { ko: "사랑스럽고 작고 소중한 느낌의 마스코트 스타일.", en: "Lovely, small, and precious mascot style.", ja: "愛らしく小さくて大切なマ스코ット風スタイル。" },
+    avatarStyle: { ko: "사랑스럽고 작고 소중한 느낌의 마스코트 스타일.", en: "Lovely, small, and precious mascot style.", ja: "愛らしく小さくて大切なマスコット風スタイル。", zh: "可爱、娇小且珍贵的吉祥物风格。" },
     ...avatars.chocolat
   },
   "ICDU": {
-    nickname: { ko: "특정 속성 매니아", en: "Attribute Enthusiast", ja: "特定属性マニア" },
+    nickname: { ko: "특정 속성 매니아", en: "Attribute Enthusiast", ja: "特定属性マニア", zh: "特定属性爱好者" },
     description: {
       ko: "특정 직업이나 도구 등 아주 좁고 깊은 개인적 취향을 공유하는 사람들과 컨셉 플레이를 즐깁니다. 특정 컨셉에 대한 진심 어린 몰입을 중요시합니다.",
       en: "Enjoys concept play with people who share very narrow and deep personal interests like specific jobs or tools. Values sincere immersion in concepts.",
-      ja: "特定の職業や道具など、極めて狭く深い個人的な好みを共有する人たちとコンセプトプレイを楽しむ。特定のコンセプトに対する真心のこもった没入を重視する。"
+      ja: "特定の職業や道具など、極めて狭く深い個人的な好みを共有する人たちとコンセプトプレイを楽しむ。特定のコンセプトに対する真心のこもった没入を重視する。",
+      zh: "喜欢与分享极窄且深厚的个人偏好（如特定职业或工具）的人一起进行概念扮演。重视对特定概念的真诚投入。"
     },
-    avatarStyle: { ko: "작은 체구에 정교한 기믹이 포함된 테크니컬 스타일.", en: "Technical style with small stature and intricate gimmicks.", ja: "小柄な体に精巧なギミックが含まれたテクニカルなスタイル。" },
+    avatarStyle: { ko: "작은 체구에 정교한 기믹이 포함된 테크니컬 스타일.", en: "Technical style with small stature and intricate gimmicks.", ja: "小柄な体に精巧なギミックが含まれたテクニカルなスタイル。", zh: "娇小身躯中包含精巧装置的技术风格。" },
     ...avatars.kipfel
   },
   "ICGA": {
-    nickname: { ko: "마스코트 유저", en: "Mascot User", ja: "マスコットユーザー" },
+    nickname: { ko: "마스코트 유저", en: "Mascot User", ja: "マスコットユーザー", zh: "吉祥物用户" },
     description: {
       ko: "지인들 사이에서 귀여운 캐릭터로 존재하며 분위기를 밝게 띄우는 게임 플레이어입니다. 긍정적인 에너지를 전파하며 모임의 활력소 역할을 합니다.",
       en: "Plays as a cute character among friends, brightening the atmosphere. Spreads positive energy and acts as the life of the party.",
-      ja: "知人の間で可愛いキャラクターとして存在し、その場の雰囲気を明るくする盛り上げ役。ポジティブなエネルギーを届け、集会の活力となる。"
+      ja: "知人の間で可愛いキャラクターとして存在し、その場の雰囲気を明るくする盛り上げ役。ポジティブなエネルギーを届け、集会の活力となる。",
+      zh: "在熟人之间以可爱角色的形象存在，带动气氛的玩家。传播正能量，充当聚会的活力源泉。"
     },
-    avatarStyle: { ko: "활동하기 편하고 귀여움이 강조된 트렌디한 꼬맹이 스타일.", en: "Active and trendy child-like style with an emphasis on cuteness.", ja: "動きやすく可愛さが強調された、トレンド感のある小童スタイル。" },
+    avatarStyle: { ko: "활동하기 편하고 귀여움이 강조된 트렌디한 꼬맹이 스타일.", en: "Active and trendy child-like style with an emphasis on cuteness.", ja: "動きやすく可愛さが強調された、トレンド感のある小童スタイル。", zh: "便于活动且强调可爱感的时髦小童风格。" },
     ...avatars.mame
   },
   "ICGU": {
-    nickname: { ko: "개성파 꼬맹이", en: "Eccentric Child", ja: "個性派おちびさん" },
+    nickname: { ko: "개성파 꼬맹이", en: "Eccentric Child", ja: "個性派おちびさん", zh: "个性派小童" },
     description: {
       ko: "작고 귀여운 캐릭터를 선호하면서도 남들과는 다른 디테일과 한 끗 차이의 개성을 챙기는 타입입니다. 작지만 확실한 존재감을 드러냅니다.",
       en: "Prefers small and cute characters but pays attention to unique details and subtle individuality. Shows a small but definite presence.",
-      ja: "小さくて可愛いキャラクターを好みながらも、他人とは違うディテールや一味違う個性を大切にするタイプ。小柄ながらも確かな存在感を示す。"
+      ja: "小さくて可愛いキャラクターを好みながらも、他人とは違うディテールや一味違う個性を大切にするタイプ。小柄ながらも確かな存在感を示す。",
+      zh: "虽然偏好娇小可爱的角色，但也会追求与众不同的细节和微小的个性差异。虽小显现出明确的存在感。"
     },
-    avatarStyle: { ko: "특정 컨셉이나 속성이 명확한 화려한 디테일의 스타일.", en: "Flashy detail style with clear specific concepts or attributes.", ja: "特定のコンセプトや属性が明確な、華やかなディテールのスタイル。" },
+    avatarStyle: { ko: "특정 컨셉이나 속성이 명확한 화려한 디테일의 스타일.", en: "Flashy detail style with clear specific concepts or attributes.", ja: "特定のコンセプトや属性が明確な、華やかなディテールのスタイル。", zh: "特定概念或属性明确、细节繁复华丽的风格。" },
     ...avatars.nemesis
   },
   "DEFAULT": {
-    nickname: { ko: "미스테리한 여행자", en: "Mysterious Traveler", ja: "ミステリアスな旅人" },
+    nickname: { ko: "미스테리한 여행자", en: "Mysterious Traveler", ja: "ミステリアスな旅人", zh: "神秘的旅行者" },
     description: {
       ko: "당신은 아직 정의되지 않은 독특한 스타일의 유저입니다. 여러 지표가 균형을 이루고 있어 상황에 따라 다양한 모습을 보여주네요!",
       en: "You are a traveler with a style not yet defined. Various indicators are balanced, showing different faces depending on the situation!",
-      ja: "あなたはまだ定義されていない、独特なスタイルのユーザー。様々な指標が均衡を保っており、状況に応じて多様な姿を見せてくれます。"
+      ja: "あなたはまだ定義されていない、独特なスタイルのユーザー。様々な指標が均衡を保っており、状況に応じて多様な姿を見せてくれます。",
+      zh: "您是一位尚未被定义的独特风格用户。各项指标保持平衡，根据情况展示出多样的面貌！"
     },
-    avatarStyle: { ko: "여러 스타일이 섞인 커스텀 아바타, 개성 있는 액세서리.", en: "Mixed-style custom avatar, unique accessories.", ja: "様々なスタイルが混ざったカスタムアバター、個性的なアクセサリー。" },
+    avatarStyle: { ko: "여러 스타일이 섞인 커스텀 아바타, 개성 있는 액세서리.", en: "Mixed-style custom avatar, unique accessories.", ja: "様々なスタイルが混ざったカスタムアバター、個性的なアクセサリー。", zh: "混合多种风格的定制形象，充满个性的配饰。" },
     ...avatars.chiffon
   }
 };

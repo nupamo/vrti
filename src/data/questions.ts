@@ -16,7 +16,8 @@ export const questions: Question[] = [
     text: {
       ko: "나는 친구가 있어도 퍼블릭에 가곤 한다.",
       en: "I often go to public worlds even when I have friends online.",
-      ja: "フレンドがいてもパブリックワールドに行くことがある。"
+      ja: "フレンドがいてもパブリックワールドに行くことがある。",
+      zh: "即使有朋友在线，我也会去公共世界。"
     },
     weights: [{ indicator: 'E', score: 0.9 }, { indicator: 'G', score: 0.101 }]
   },
@@ -24,7 +25,8 @@ export const questions: Question[] = [
     text: {
       ko: "나는 로그인한 친구가 없으면 VRChat에 접속하지 않거나 금방 끄는 편이다.",
       en: "If no friends are online, I don't join or I quit VRChat quickly.",
-      ja: "ログインしているフレンドがいなければ、VRChatに接続しなかったり早めに切り上げたりする。"
+      ja: "ログインしているフレンドがいなければ、VRChatに接続しなかったり早めに切り上げたりする。",
+      zh: "如果没有朋友在线，我通常不登录 VRChat，或者很快就会下线。"
     },
     weights: [{ indicator: 'I', score: 1.001 }, { indicator: 'D', score: 0.1 }]
   },
@@ -32,7 +34,8 @@ export const questions: Question[] = [
     text: {
       ko: "Vket이 열리면 혼자 가지 않고 같이 갈 친구를 찾아본다.",
       en: "When Vket opens, I look for friends to visit with rather than going alone.",
-      ja: "Vketが開催される時は、一人で行かずに一緒に行くフレンドを探す。"
+      ja: "Vketが開催される時は、一人で行かずに一緒に行くフレンドを探す。",
+      zh: "Vket 开幕时，我不会一个人去，而是会找朋友一起。"
     },
     weights: [{ indicator: 'I', score: 0.501 }, { indicator: 'D', score: 0.1 }]
   },
@@ -40,7 +43,8 @@ export const questions: Question[] = [
     text: {
       ko: "자주 보지 않는 사람은 친구목록에 있을 필요가 없다고 생각한다.",
       en: "I don't think there's a need to keep people I don't see often on my friends list.",
-      ja: "あまり会わない人はフレンドリストに入れる必要がないと思う。"
+      ja: "あまり会わない人はフレンドリストに入れる必要がないと思う。",
+      zh: "我认为不经常见面的人没必要留在好友列表里。"
     },
     weights: [{ indicator: 'I', score: 1.001 }, { indicator: 'D', score: 1.0 }]
   },
@@ -48,7 +52,8 @@ export const questions: Question[] = [
     text: {
       ko: "퍼블릭에서 발생하는 소란을 하나의 '구경거리'라고 생각하며 즐긴다.",
       en: "I see public world commotions as a 'spectacle' and enjoy watching them.",
-      ja: "パブリックでの騒動を一つの「見物」だと思って楽しむ。"
+      ja: "パブリックでの騒動を一つの「見物」だと思って楽しむ。",
+      zh: "我觉得在公共世界发生的骚动很有意思，会把它当作一种“演出”来看。"
     },
     weights: [{ indicator: 'E', score: 1.1 }, { indicator: 'G', score: 0.501 }]
   },
@@ -56,7 +61,8 @@ export const questions: Question[] = [
     text: {
       ko: "나는 인게임에서도 내 실제 목소리와 플레이 성향을 그대로 사용하는 편이다.",
       en: "I tend to use my real voice and real personality in-game.",
-      ja: "インゲームでも実際の自分の声やプレイスタイルをそのまま使う方だ。"
+      ja: "インゲームでも実際の自分の声やプレイスタイルをそのまま使う方だ。",
+      zh: "在游戏中，我也会倾向于使用自己真实的声音和游戏风格。"
     },
     weights: [{ indicator: 'S', score: 1.0 }, { indicator: 'E', score: 0.2 }]
   },
@@ -64,7 +70,8 @@ export const questions: Question[] = [
     text: {
       ko: "생긴게 달라도 가상 세계의 나도 결국 나라고 생각한다.",
       en: "Even if the appearance is different, I believe the virtual 'me' is still me.",
-      ja: "外見が違っても、仮想世界の自分も結局は自分だと思う。"
+      ja: "外見が違っても、仮想世界の自分も結局は自分だと思う。",
+      zh: "即使样子不同，我也认为虚拟世界的我终究还是我。"
     },
     weights: [{ indicator: 'S', score: 1.0 }, { indicator: 'G', score: 0.201 }]
   },
@@ -72,7 +79,8 @@ export const questions: Question[] = [
     text: {
       ko: "서로의 현실 정보를 나누는게 불편하다.",
       en: "I feel uncomfortable sharing real-life information with others.",
-      ja: "お互いの現実的な情報を共有することに抵抗がある。"
+      ja: "お互いの現実的な情報を共有することに抵抗がある。",
+      zh: "我觉得交换彼此的现实生活信息很不舒服。"
     },
     weights: [{ indicator: 'C', score: 1.101 }, { indicator: 'D', score: 0.3 }, { indicator: 'I', score: 0.101 }]
   },
@@ -80,7 +88,8 @@ export const questions: Question[] = [
     text: {
       ko: "현실의 지인이 내 VRChat 플레이를 봐도 부끄럽지 않다.",
       en: "I wouldn't feel embarrassed if a real-life acquaintance saw me playing VRChat.",
-      ja: "現実の知人にVRChatのプレイを見られても恥ずかしくない。"
+      ja: "現実の知人にVRChatのプレイを見られても恥ずかしくない。",
+      zh: "即使现实中的熟人看到我玩 VRChat，我也不会感到尴尬。"
     },
     weights: [{ indicator: 'S', score: 1.0 }, { indicator: 'G', score: 0.501 }]
   },
@@ -88,7 +97,8 @@ export const questions: Question[] = [
     text: {
       ko: "아바타를 바꿀 때마다 그 아바타의 외형에 맞춰 말투나 행동을 조금씩 바꾼다.",
       en: "Whenever I change my avatar, I adjust my speech and behavior to match its appearance.",
-      ja: "アバターを変えるたびに、その外見に合わせて言葉遣いや行動を少しずつ変える。"
+      ja: "アバターを変えるたびに、その外見に合わせて言葉遣いや行動を少しずつ変える。",
+      zh: "每当我更换虚拟形象时，都会根据该形象的外观稍微改变语气或行为。"
     },
     weights: [{ indicator: 'C', score: 1.401 }, { indicator: 'D', score: 0.3 }]
   },
@@ -96,7 +106,8 @@ export const questions: Question[] = [
     text: {
       ko: "VRChat에서 일어난 일 때문에 현실에 지장이 가는 일이 있다.",
       en: "Things that happen in VRChat sometimes affect my real life.",
-      ja: "VRChatで起きたことのせいで、現実に支障をきたすことがある。"
+      ja: "VRChatで起きたことのせいで、現実に支障をきたすことがある。",
+      zh: "VRChat 中发生的事情有时会影响到现实生活。"
     },
     weights: [{ indicator: 'D', score: 1.1 }, { indicator: 'S', score: 0.2 }]
   },
@@ -104,7 +115,8 @@ export const questions: Question[] = [
     text: {
       ko: "누군가 나를 만지면 실제로 감각이 느껴지는 것 같다.",
       en: "If someone touches me, I feel as if I can actually sense it.",
-      ja: "誰かに触れられると、実際に感覚があるように感じる。"
+      ja: "誰かに触れられると、実際に感覚があるように感じる。",
+      zh: "当有人碰到我时，我似乎真的能感觉到。"
     },
     weights: [{ indicator: 'D', score: 1.2 }]
   },
@@ -112,7 +124,8 @@ export const questions: Question[] = [
     text: {
       ko: "VR장비가 수리중인 상태라면 굳이 로그인하지는 않을 것 같다.",
       en: "If my VR equipment was being repaired, I probably wouldn't log in.",
-      ja: "VR機器が修理中であれば、あえてログインはしないと思う。"
+      ja: "VR機器が修理中であれば、あえてログインはしないと思う。",
+      zh: "如果 VR 设备正在维修中，我大概就懒得登录了。"
     },
     weights: [{ indicator: 'D', score: 1.01 }, { indicator: 'I', score: 0.301 }]
   },
@@ -120,7 +133,8 @@ export const questions: Question[] = [
     text: {
       ko: "디스코드로 이미 좋아하는 친구들과 대화중이라면 굳이 VRChat에 접속하려는 생각은 들지 않는다.",
       en: "If I'm already talking to friends on Discord, I don't feel the need to join VRChat.",
-      ja: "Discordですでに好きなフレンドと会話中なら、あえてVRChatに接続しようとは思わない。"
+      ja: "Discordですでに好きなフレンドと会話中なら、あえてVRChatに接続しようとは思わない。",
+      zh: "如果已经在 Discord 里和喜欢的朋友聊天了，我就不太想登录 VRChat 了。"
     },
     weights: [{ indicator: 'G', score: 1.101 }, { indicator: 'I', score: 0.301 }]
   },
@@ -128,7 +142,8 @@ export const questions: Question[] = [
     text: {
       ko: "거울을 보며 떠들기보다는 월드 탐방을 더 좋아한다.",
       en: "I prefer exploring worlds over sitting in front of a mirror and chatting.",
-      ja: "鏡を見ながらお喋りするより、ワールド探索の方が好きだ。"
+      ja: "鏡を見ながらお喋りするより、ワールド探索の方が好きだ。",
+      zh: "比起盯着镜子聊天，我更喜欢探索不同世界。"
     },
     weights: [{ indicator: 'G', score: 1.001 }, { indicator: 'E', score: 0.5 }]
   },
@@ -136,7 +151,8 @@ export const questions: Question[] = [
     text: {
       ko: "유니티나 사진 보정 작업 등을 하다가 VRChat 접속을 포기할 때가 있다.",
       en: "I sometimes skip joining VRChat while working on Unity or photo editing.",
-      ja: "Unityや写真加工の作業などをしていると、VRChatへの接続を諦めることがある。"
+      ja: "Unityや写真加工の作業などをしていると、VRChatへの接続を諦めることがある。",
+      zh: "有时因为在忙 Unity 或修图，就决定不登录 VRChat 了。"
     },
     weights: [{ indicator: 'U', score: 1.401 }]
   },
@@ -144,7 +160,8 @@ export const questions: Question[] = [
     text: {
       ko: "아바타는 내 취향보다 남의 눈이 더 중요하다.",
       en: "How others see my avatar is more important than my own preference.",
-      ja: "アバターは自分の好みより他人の目が重要だ。"
+      ja: "アバターは自分の好みより他人の目が重要だ。",
+      zh: "比起自己的喜好，别人的眼光对我的虚拟形象更重要。"
     },
     weights: [{ indicator: 'A', score: 1.0 }, { indicator: 'C', score: 0.301 }]
   },
@@ -152,7 +169,8 @@ export const questions: Question[] = [
     text: {
       ko: "새로운 아바타를 만들면 반드시 다른 사람의 의견을 물어본다.",
       en: "If I make a new avatar, I always ask for other people's opinions.",
-      ja: "新しいアバターを作ったら、必ず他人の意見を聞く。"
+      ja: "新しいアバターを作ったら、必ず他人の意見を聞く。",
+      zh: "制作新虚拟形象后，我一定会询问他人的意见。"
     },
     weights: [{ indicator: 'A', score: 1.0 }]
   },
@@ -160,7 +178,8 @@ export const questions: Question[] = [
     text: {
       ko: "새로운 기능을 배우는 것보다, 친구들과 아무 목적 없이 거울 앞에 앉아 떠드는 시간이 더 소중하다.",
       en: "Sitting and chatting with friends in front of a mirror is more precious than learning new features.",
-      ja: "新しい機能を学ぶより、フレンドと何も目的なく鏡の前に座って喋る時間の方が大切だ。"
+      ja: "新しい機能を学ぶより、フレンドと何も目的なく鏡の前に座って喋る時間の方が大切だ。",
+      zh: "比起学习新功能，和朋友们漫无目的地在镜子前聊天的时间更珍贵。"
     },
     weights: [{ indicator: 'A', score: 0.7 }, { indicator: 'S', score: 0.1 }]
   },
@@ -168,7 +187,8 @@ export const questions: Question[] = [
     text: {
       ko: "인게임에서 아바타 오류를 발견하면 VR을 쓰고 있어도 유니티를 킨다.",
       en: "If I find an avatar error in-game, I open Unity even while wearing VR.",
-      ja: "インゲームでアバターのエラーを発見したら、VRを被っていてもUnityを起動する。"
+      ja: "インゲームでアバターのエラーを発見したら、VRを被っていてもUnityを起動する。",
+      zh: "如果在游戏中发现虚拟形象报错，即使戴着 VR 我也会去开 Unity。"
     },
     weights: [{ indicator: 'U', score: 1.001 }, { indicator: 'G', score: 0.201 }]
   }

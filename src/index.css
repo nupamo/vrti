@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+SC:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,8 +8,13 @@
   color-scheme: dark;
 }
 
+:lang(ko) { font-family: 'Noto Sans KR', sans-serif; }
+:lang(ja) { font-family: 'Noto Sans JP', sans-serif; }
+:lang(zh) { font-family: 'Noto Sans SC', sans-serif; }
+:lang(en) { font-family: 'Noto Sans', sans-serif; }
+
 body {
-  @apply bg-[#0A0E14] text-white font-sans;
+  @apply bg-[#0A0E14] text-white;
   background: radial-gradient(circle at 50% -20%, #102A5A 0%, #0A0E14 70%);
   min-height: 100vh;
 }

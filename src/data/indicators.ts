@@ -1,4 +1,4 @@
-export type Language = 'ko' | 'en' | 'ja';
+export type Language = 'ko' | 'en' | 'ja' | 'zh';
 
 export type Indicator = 'E' | 'I' | 'S' | 'C' | 'D' | 'G' | 'A' | 'U' | 'x';
 
@@ -54,5 +54,16 @@ export const indicatorDescriptions: Record<Language, Record<Indicator, Indicator
     'A': { name: 'Adapt', description: '空気を読み、自分の好みよりはトレンドに合ったアバターを使用します。' },
     'U': { name: 'Unique', description: '自分だけのアバター制作、写真撮影などの創作活動に集中します。' },
     'x': { name: 'Neutral', description: '該当の指標において中立的な傾向を示し、状況に応じて柔軟に対処します。' }
+  },
+  zh: {
+    'E': { name: 'Explorer', description: '喜欢公共世界和新的相遇，探索未知的领域。' },
+    'I': { name: 'Inside', description: '更喜欢在以熟人为主的私密空间中建立稳定的纽带。' },
+    'S': { name: 'Sync', description: '将现实中的自我投影到虚拟形象上，进行真诚的交流。' },
+    'C': { name: 'Concept', description: '通过设定角色身份，享受虚拟世界的生活。' },
+    'G': { name: 'Gamer', description: '比起沉浸式空间，更倾向于将 VRChat 视为现实的延伸或一个游戏平台。' },
+    'D': { name: 'Deep', description: '深度沉浸在虚拟世界的感观和情感中，重视身心/情感的互动。' },
+    'A': { name: 'Adapt', description: '善于适应氛围，比起个人喜好更倾向于使用符合潮流的虚拟形象。' },
+    'U': { name: 'Unique', description: '专注于制作个人虚拟形象、拍摄照片等创作活动。' },
+    'x': { name: 'Neutral', description: '在该指标上表现中立，能根据情况灵活应对。' }
   }
 };
